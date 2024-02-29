@@ -4,7 +4,6 @@ import csv #to create a CSV file of the CUI Regulations found
 import re #regex searching
 import fitz #pip install PyMuPDF
 
-
 #tool for building accurate regex for pattern searching: https://pythex.org/
 
 def get_file_type(file_name): #function to get file type
@@ -66,3 +65,7 @@ def main():
 
 if __name__=="__main__":
     main()
+
+#Created by Dustin Mobley
+#Purpose: assist organizations determine what CUI they may be handling or creating by skimming through contracts and 
+#compiling a list of relevant regulations and their respective CUI category
