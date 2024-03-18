@@ -23,7 +23,7 @@ def main():
     current_directory = os.getcwd() #first get working directory
     files_in_dir = os.listdir(current_directory) #list out all files in working directory
 
-    regulation_pattern = r"(DFARS \d*[.-]+\d*[.-]\d+|FAR \d*[.-]+\d*[.-]\d+|\d* CFR Part \d* \- Part \d*|\d* CFR Part \d*\- Part \d*|\d* CFR Part \d*\-Part \d*|\d* CFR Part \d*\.\d*|\d* CFR Part \d* [a-zA-Z]* [A-Z]\([a-z]\)|\d* CFR Part \d*|\d* CFR \d*[.]\d*\([a-z]\)\([0-9]\)\([a-z]\)|\d* CFR \d*[.]\d*\([a-z]\)\([0-9]\)\-\([0-9]\)|\d* CFR \d*[.]\d*\([a-z]\)\([0-9]\)\([a-z]*\)|\d* CFR \d*[.]\d*\([a-z]\) \([0-9]\)\-\([a-z]\)|\d* CFR \d*[.]\d*\([a-z]\)\([0-9]\)\-\([a-z]\)\([0-9]\)|\d* CFR \d*[.]\d*\([a-z]\)\([0-9]\)|\d* CFR \d*[.]\d*\([a-z]\)\-[0-9]\([a-z]\)|\d* CFR \d*[.]\d*\([a-z]\)|\d* CFR \d*[.]\d*\-\d*\([a-z]\)|\d* CFR \d*[.]\d*\-\d*|\d* CFR \d*[.]\d*[a-zA-Z]\([a-z]\)|\d* CFR \d*[a-z]\.\d*\([a-z]\)|\d* CFR \d*[a-z][.]\d*|\d* CFR \d*[.]\d*|\d* CFR \d*[a-z]\.[0-9]|\d* CFR \d*\, Subpart [A-Z]\, Appendix [A-Z]|\d* CFR \d*\, Subpart [A-Z]|\d* CFR \d*|\d* USC Appendix \d[A-Z]\([a-z]\)\(\d*\)\([A-Z]\)|\d* USC Appendix \d[A-Z]\([a-z]\)|\d* USC Appendix \d*\([a-z]\)|\d* USC \d*\([a-z]\)\([0-9]\)\([A-Z]\)\([a-z]*\)\([A-Z]*\)|\d* USC \d*\([a-z]\)\([0-9]\)\([A-Z]\)\([a-z]*\)|\d* USC \d*\([a-z]\)\([0-9]\)\([A-Z]\)|\d* CFR \d*|\d* USC \d*\([a-z]\)\([0-9]\)|\d* USC \d*\([a-z]\)|\d* USC \d*\([0-9]\)|\d* USC \d*[a-z]\([a-z]\)\([0-9]\)\([A-Z]\)|\d* USC \d*[a-z]\([a-z]\)\([0-9]\)|\d* USC \d*[a-z]\([a-z]\)|\d* USC \d*[a-z]\([0-9]\)\([A-Z]\)\([a-z]*\)|\d* USC \d*[a-z]\([0-9]*\)\([A-Z]\)|\d* USC \d*[a-z]\-[0-9]*\([a-z]\)\([0-9]\)|\d* USC \d*[a-z]\-[0-9]*\([a-z]\)|\d* USC \d*[a-z]* [0-9]*[A-Z]\([a-z]\)\([0-9]\)\([A-Z]\)|\d* USC \d*[a-z]* [0-9]*[A-Z]\([a-z]\)|\d* USC \d*[a-z]* [0-9]*\([a-z]\)|\d* USC \d*[a-z]*\-[0-9] [a-z]*\([a-z]\)|\d* USC \d*[a-z]*\-[0-9]\([a-z]\)|\d* USC \d*[a-z]*\-[0-9]|\d* USC \d*[a-z]*|\d* USC \d*|Federal Continuity Directive [0-9]|Presidential Policy Directive [0-9]*|GSA [a-zA-Z]* [A-Z] \d*\.\d*|The Risk Management Process for Federal Facilities: An Interagency Security Committee Standard|P.L. \d*\-\d*|FinCen BSA|Executive Order \d*|Intelligence Community Directive \d*|OMB Circular A-\d* section \d*.\d*|OMB Circular A-\d*|OMB [A-Z]-\d*-\d*|NSPM \d*|HSPD \d*|Federal Rules of Criminal Procedure \d*\([a-z]*\)\([0-9]\)|Federal Rules of Criminal Procedure \d*\([a-z]*\)|Federal Rules of Civil Procedure \d*\([a-z]\)\([0-9]\)|Federal Rules of Civil Procedure \d*\([a-z]\)|US Attorney's Manual|\d* Federal Register \d*|Federal Rules of Evidence Rules \d* and \d*\([a-z]\)|United States Constitution, Article \d*, Section \d*|United States Security Authority for NATO, Instruction \d*\-\d*|NATO [A-Z]\-[A-Z]\(\d*\)\d*|Provisional Approval 2018-09-07|\d* FR \d* Sec. [0-9]\([a-z]\)|IRS Publication \d*)"
+    regulation_pattern = r"\d* USC [\d.()\-\w]* [\d.()\-\w]* [\d.()\-\w]*|\d* USC [\d.()\-\w]* [\d.()\-\w]*|\d* USC [\d.()\-\w]*|\d* CFR [\d.()\-\w,]* [\d.()\-\w,]* [\d.()\-\w,]* [\d.()\-\w]* [\d.()\-\w]*|\d* CFR [\d.()\-\w,]* [\d.()\-\w]* [\d.()\-\w]* [\d.()\-\w]*|\d* CFR [\d.()\-\w,]* [\d.()\-\w]* [\d.()\-\w]*|\d* CFR [\d.()\-\w]* [\d.()\-\w]*|\d* CFR [\d.()\-\w]*|FAR [\d.()\-\w]*|FAR [\d.()\-\w]* [\d.()\-\w]*|DFARS [\d.()\-\w]*|DFARS [\d.()\-\w]* [\d.()\-\w]*|\d* FR [\d.()\-\w]* [\d.()\-\w]* [\d.()\-\w]*|NATO [\d.()\-\w]*|Intelligence Community Directive \d*|Federal Rules of \w* \w* [\d.()\-\w]*|\d* Federal Register \d*|Executive Order \d*|HSPD \d*|NSPM \d*|FinCen BSA|GSA PBS \w* [\d.]*|P.L. [\d\-]*|OMB \w* [\w\-]* [\w]* [\d.]*|OMB \w* [\w\-]*|OMB [\w\-]*|IRS Publication \d*|United States Constitution, Article \d, Section \d|Provisional Approval [\d\-]*|Federal Continuity Directive \d*|Presidential Policy Directive \d*|United States Security Authority for NATO, Instruction [\d\-]*|The Risk Management Process for Federal Facilities: An Interagency Security Committee Standard|US Attorney's Manual"
 
     if file_name in files_in_dir: #search for the contract in the current working directory (where you ran the python script)
 
@@ -40,6 +40,7 @@ def main():
                 content += page.get_text() #add extracted text to content string
             matches = re.findall(regulation_pattern, content) #search content for regulation matches
             file.close() #close file when finished
+            
     else:
         print(f'\nFile not found in current directory: {current_directory}\nPlease navigate to directory where {file_name} is located and try running {sys.argv[0]} again!\n')
         quit()
@@ -57,9 +58,15 @@ def main():
             writer.writerow(['Regulation','CUI Category (if applicable)']) #first row will contain 'Regulation' and 'CUI Category (if applicable) columns
 
             for match in matches: #iterate through each match found from imported file
-                for reg in registry_dict: #iterate through each key value in registry_dict dictionary
-                    if reg == match: #if match from imported file matches key (regulation) from dictionary, then write the following row:
-                        writer.writerow([match,registry_dict[reg]]) #write the match, and the corresponding CUI Category
+                match = match.rstrip() #delete trailing whitespace that sometimes occurs with PDF's
+                if match not in registry_dict.keys():
+                    writer.writerow([match,"CONFIRM NOT A MATCH!"])
+                else:
+                    for reg in registry_dict: #iterate through each key value in registry_dict dictionary
+                        if reg == match: #if match from imported file matches key (regulation) from dictionary, then write the following row:
+                            writer.writerow([match,registry_dict[reg]]) #write the match, and the corresponding CUI Category
+
+                
 
     print(f'\n{file_name.split(".")[0]}_CUI_Reg_List.csv successfully created!\n')
 
