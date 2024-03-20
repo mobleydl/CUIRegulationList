@@ -12,7 +12,7 @@ Usage:
 8. Install the necessary packages by entering the following commands into the PowerShell prompt (do not include quotes):<br>
    'pip install openpyxl'<br>
    'pip install PyMuPDF'
-10. Once necessary packages are installed, type the following command into the PowerShell prompt (do not inlcude quotes):
+10. Once necessary packages are installed, type the following command into the PowerShell prompt (do not inlcude quotes):<br>
     'Python RLBuilder.py'
 12. If steps performed correctly you should see a message in the PowerShell prompt stating that the CUI Regulation List.xlsx file has been created successfully
 13. Exit out of the PowerShell prompt
