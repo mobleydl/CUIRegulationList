@@ -9,8 +9,8 @@ Usage:
 5. While having the newly created folder open, hold 'SHIFT' key (Windows device only) and right click anywhere there is empty space within the empty folder
 6. A drop down will appear - click 'Open PowerShell window here'
 7. A PowerShell prompt will appear
-8. Install the necessary packages by entering the following commands into the PowerShell prompt (do not include quotes):
-   'pip install openpyxl'
+8. Install the necessary packages by entering the following commands into the PowerShell prompt (do not include quotes):<br>
+   'pip install openpyxl'<br>
    'pip install PyMuPDF'
 10. Once necessary packages are installed, type the following command into the PowerShell prompt (do not inlcude quotes):
     'Python RLBuilder.py'
