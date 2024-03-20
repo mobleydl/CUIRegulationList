@@ -9,13 +9,17 @@ Usage:
 5. While having the newly created folder open, hold 'SHIFT' key (Windows device only) and right click anywhere there is empty space within the empty folder
 6. A drop down will appear - click 'Open PowerShell window here'
 7. A PowerShell prompt will appear
-8. Type the following command: Python RLBuilder.py
-9. If steps performed correctly you should see a message in the PowerShell prompt stating that the CUI Regulation List.xlsx file has been created successfully
-10. Exit out of the PowerShell prompt
-11. Open the newly created CUI Regulation List.xlsx file located in the newly created folder
-12. Look through CUI Regulation List and ensure any non-matches (highlighted in red) do not relate to a specific CUI Category
+8. Install the necessary packages by entering the following commands into the PowerShell prompt (do not include quotes):
+   'pip install openpyxl'
+   'pip install PyMuPDF'
+10. Once necessary packages are installed, type the following command into the PowerShell prompt (do not inlcude quotes):
+    'Python RLBuilder.py'
+12. If steps performed correctly you should see a message in the PowerShell prompt stating that the CUI Regulation List.xlsx file has been created successfully
+13. Exit out of the PowerShell prompt
+14. Open the newly created CUI Regulation List.xlsx file located in the newly created folder
+15. Look through CUI Regulation List and ensure any non-matches (highlighted in red) do not relate to a specific CUI Category
     Note: The easiest way to do this is copy the non-match regulation and search for it in the CUI Registry 'Search the Registry' search box (https://www.archives.gov/cui/registry/category-list)
-13. Once non-matches have been confirmed to not match a CUI category, remove them from the CUI Regulation List
+16. Once non-matches have been confirmed to not match a CUI category, remove them from the CUI Regulation List
     
 Important Notes:
 * Contract must be in .txt or .pdf format to be recognized by script!
